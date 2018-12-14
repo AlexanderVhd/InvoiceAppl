@@ -29,7 +29,15 @@ namespace InvoicingAppl.Models
         /// </summary>
         public bool Check()
         {
-            return true;
+            //check if the password is the reversed lower case form of the username
+            if(Password == new string(UserName.ToLower().Reverse().ToArray()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

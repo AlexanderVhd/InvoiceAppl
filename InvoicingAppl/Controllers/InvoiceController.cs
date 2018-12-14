@@ -10,13 +10,16 @@ namespace InvoicingAppl.Controllers
     public class InvoiceController : Controller
     {
         /// <summary>
-        /// 
+        /// get method for adding an invoice (displays empty invoice)
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         public ActionResult AddInvoice()
         {
-            return View();
+            ViewBag.InvoiceFormScope = InvoiceFormType.Add;
+
+            //empty invoice model object is passed
+            return View("InvoiceForm", new InvoicingViewModel());
         }
 
         [HttpPost]
