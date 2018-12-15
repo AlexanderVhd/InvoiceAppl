@@ -56,7 +56,7 @@ namespace InvoicingAppl.Controllers
                 }
 
                 //save the user in the session data
-                Session["saved_user"] = _user;
+                Session["Session_User"] = _user;
 
                 //check role and display the appropriate view      
                 switch (_user.Role)

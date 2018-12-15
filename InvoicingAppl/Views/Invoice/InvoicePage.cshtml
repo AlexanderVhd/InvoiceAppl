@@ -105,11 +105,9 @@
     }
 
     <input type="submit" name=@ViewBag.InvoiceFormScope value=@ViewBag.SubmitValue class="btn btn-success" />
+
         if (ViewBag.InvoiceFormScope == InvoiceFormType.Edit)
         {
-            @*NOTE: using the formaction to override the action for a given submit button only works in broswers that support Html5
-                For legacy clients the Receivables() action on the server side should detect the "Paid" parameter and redirect
-                to the InvoicePaid action method*@
             @Html.Hidden("InvoiceId", Model.Id)
             <input type="submit" name="SubmitPaid" value="Paid" formaction="/Invoicing/InvoicePaid" class="btn btn-danger" />
         }

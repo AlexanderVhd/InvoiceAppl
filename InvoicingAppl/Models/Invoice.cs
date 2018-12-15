@@ -36,6 +36,14 @@ namespace InvoicingAppl.Models
         public const decimal TAX = 0.1m;
 
         /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Invoice()
+        {
+
+        }
+
+        /// <summary>
         /// Invoice constructor 
         /// </summary>
         /// <param name="id"></param>
@@ -159,6 +167,8 @@ namespace InvoicingAppl.Models
         {
             get { return SubTotal + Tax; }
         }
+
+        public bool HasPaid { get; internal set; }
 
         /// <summary>
         /// Update current invoice with the values of the given invoice 
